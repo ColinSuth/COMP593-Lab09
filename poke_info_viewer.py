@@ -9,8 +9,6 @@ root = Tk()
 root.title("Pokemon Stats Viewer")
 root.resizable(False, False)
 
-# TODO: Additional window configuration
-
 # Add frames to window
 frm_top = ttk.Frame(root)
 frm_top.grid(row=0, column=0, columnspan=2, pady=(20, 10))
@@ -47,15 +45,16 @@ def handel_get_info():
     lbl_height_true['text'] = f"{poke_info['height']} dm"
     lbl_weight_true['text'] = f"{poke_info['weight']} hg"
     
-    #types_list = [t['types']['name'] for t in poke_info['types']]
+    types_list = [t['type']['name'].title() for t in poke_info['types']]
+    n = len(types_list)
+    # Checks the length of the abilities and then prints it
+    if n == 1:
+        lbl_type_true['text'] = f"{types_list[0]}"
     
-    types = lbl_type_true['text'] = poke_info['types'][0]['type']['name']
-    # types_two = lbl_type_true['text'] = poke_info['types'][1]['type']['name']
+    else:
+        types_csl = ', '.join(types_list[:-1])
+        lbl_type_true['text'] = f"{types_csl}, {types_list[-1]}"
 
-   
-
-
-    #    lbl_type_true['text'] = f"{poke_info['types']}"
 
     # Populate the Stat frame
     bar_hp['value'] = poke_info['stats'][0]['base_stat']
@@ -118,7 +117,7 @@ lbl_defense.grid(row=2, column=0, padx=(10, 5), pady=(10, 5), sticky=E)
 
 bar_defense = ttk.Progressbar(frm_btm_right, orient=HORIZONTAL, length=200, maximum=255)
 bar_defense.grid(row=2, column=1, padx=(0,10), pady=(10, 5))
-# bar_hp['value'] = 123
+
 
 # Pokemon Special Attack stats
 
@@ -135,7 +134,7 @@ lbl_spc_defense.grid(row=4, column=0, padx=(10, 5), pady=(10, 5), sticky=E)
 
 bar_spc_defense = ttk.Progressbar(frm_btm_right, orient=HORIZONTAL, length=200, maximum=255)
 bar_spc_defense.grid(row=4, column=1, padx=(0,10), pady=(10, 5))
-# bar_hp['value'] = 123
+
 
 # Pokemon Speed stats
 
@@ -144,7 +143,7 @@ lbl_speed.grid(row=5, column=0, padx=(10, 5), pady=(10, 5), sticky=E)
 
 bar_speed = ttk.Progressbar(frm_btm_right, orient=HORIZONTAL, length=200, maximum=255)
 bar_speed.grid(row=5, column=1, padx=(0,10), pady=(10, 5))
-# bar_hp['value'] = 123
+
 
 # Loop until window is closed
 root.mainloop()
