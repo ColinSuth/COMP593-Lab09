@@ -42,8 +42,13 @@ def handel_get_info():
         messagebox.showinfo(title='Error', message=err_msg, icon='error')
 
     # Populate the Info frame
-    lbl_height_true['text'] = f"{poke_info['height']} dm"
-    lbl_weight_true['text'] = f"{poke_info['weight']} hg"
+
+    poke_height_m = poke_info['height']
+    poke_meter = int(poke_height_m) / 10
+    poke_weight_kg = poke_info['weight']
+    poke_kilograms = int(poke_weight_kg) / 10
+    lbl_height_true['text'] = f"{poke_meter} m"
+    lbl_weight_true['text'] = f"{poke_kilograms} kg"
     
     types_list = [t['type']['name'].title() for t in poke_info['types']]
     n = len(types_list)
