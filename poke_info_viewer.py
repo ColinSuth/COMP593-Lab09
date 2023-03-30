@@ -42,7 +42,6 @@ def handel_get_info():
         messagebox.showinfo(title='Error', message=err_msg, icon='error')
 
     # Populate the Info frame
-
     poke_height_m = poke_info['height']
     poke_meter = int(poke_height_m) / 10
     poke_weight_kg = poke_info['weight']
@@ -108,7 +107,6 @@ bar_hp.grid(row=0, column=1, padx=(0,10), pady=(10, 5))
 # bar_hp['value'] = 123
 
 # Pokemon Attack stats
-
 lbl_attack = ttk.Label(frm_btm_right, text='Attack')
 lbl_attack.grid(row=1, column=0, padx=(10, 5), pady=(10, 5), sticky=E)
 
@@ -116,7 +114,6 @@ bar_attack = ttk.Progressbar(frm_btm_right, orient=HORIZONTAL, length=200, maxim
 bar_attack.grid(row=1, column=1, padx=(0,10), pady=(10, 5))
 
 # Pokemon Defense stats
-
 lbl_defense = ttk.Label(frm_btm_right, text='Defense')
 lbl_defense.grid(row=2, column=0, padx=(10, 5), pady=(10, 5), sticky=E)
 
@@ -125,7 +122,6 @@ bar_defense.grid(row=2, column=1, padx=(0,10), pady=(10, 5))
 
 
 # Pokemon Special Attack stats
-
 lbl_spc_attack = ttk.Label(frm_btm_right, text='Special Attack')
 lbl_spc_attack.grid(row=3, column=0, padx=(10, 5), pady=(10, 5), sticky=E)
 
@@ -133,7 +129,6 @@ bar_spc_attack = ttk.Progressbar(frm_btm_right, orient=HORIZONTAL, length=200, m
 bar_spc_attack.grid(row=3, column=1, padx=(0,10), pady=(10, 5))
 
 # Pokemon Special Defence stats
-
 lbl_spc_defense = ttk.Label(frm_btm_right, text='Special Defense')
 lbl_spc_defense.grid(row=4, column=0, padx=(10, 5), pady=(10, 5), sticky=E)
 
@@ -142,7 +137,6 @@ bar_spc_defense.grid(row=4, column=1, padx=(0,10), pady=(10, 5))
 
 
 # Pokemon Speed stats
-
 lbl_speed = ttk.Label(frm_btm_right, text='Speed')
 lbl_speed.grid(row=5, column=0, padx=(10, 5), pady=(10, 5), sticky=E)
 
